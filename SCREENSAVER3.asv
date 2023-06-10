@@ -1,0 +1,32 @@
+%SCREENSAVER3;
+% 
+w=8; WS=[-w, w, -w, w];       % the window size  
+shadecol=[0.9,0.9,1.0];       % light blue
+%shadecol2=[1.0,0.8,0.8];     % light pink
+randcol=rand(1,3);
+
+
+
+v = [3,3];
+
+r=170;
+[X,Y,Name] = GetRegular(4,5.5);
+PlotPolygon(X,Y,'w',0,0,WS,Name);
+hold on;
+[X,Y] = RotatePolygon(X,Y,45);
+PlotPolygon(X,Y,'w',0,0,WS,Name);
+hold on;
+
+d = 15;
+for k=5:d:360
+    [X,Y] = RotatePolygon(X,Y,d);
+    PlotPolygon(X,Y,'w',0,0,WS,Name);
+    pause(0.1)
+    hold on;
+end
+
+
+
+
+
+
